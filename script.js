@@ -57,6 +57,9 @@ function buttonPress(){
             }
             lastType = "number";
     } else if(this.classList.contains("operator")){
+            if (b === "."){
+                b = 0;
+            }
             if (lastType === "arithmetic" && this.id === "eval"){
                 displayValue.textContent = "Enter a value!";
                 lastType = "operator";
@@ -64,11 +67,14 @@ function buttonPress(){
                 displayValue.textContent = "Enter a value!";
                 lastType = "operator";
             } else if(lastType === "operator"){
-                displayValue.textContent = rounded(a);
-                op = this.textContent;
+                if( a === Infinity || a === -Infinity || isNaN(a)){
+                        displayValue.textContent = "Error"
+                    } else {
+                    displayValue.textContent = rounded(a);
+                    op = this.textContent;  
+                    }
                 lastType = "operator";
-            } else {
-                console.log(b)
+                } else {
                 a = operate(a, op, b);
                 b = 0;
                 op = this.textContent;
@@ -79,7 +85,6 @@ function buttonPress(){
                 } else {
                     displayValue.textContent = rounded(a);
                 }
-                console.log(lastType)
                 if(this.classList.contains("arithmetic")){
                     lastType = "arithmetic";
                 } else {

@@ -74,7 +74,7 @@ function buttonPress(){
                     op = this.textContent;  
                     }
                 lastType = "operator";
-                } else {
+            } else {
                 a = operate(a, op, b);
                 b = 0;
                 op = this.textContent;

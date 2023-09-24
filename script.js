@@ -1,3 +1,4 @@
+
 function add(a, b){
     return Number(a) + Number(b);
 }
@@ -102,6 +103,12 @@ function buttonPress(){
     }
 }
 
+function keyboardInput(e){
+
+
+
+}
+
 let displayValue = document.querySelector(".result");
 
 let buttons = document.querySelectorAll(".button")
@@ -110,3 +117,45 @@ for(let i = 0; i < buttons.length; i++){
     buttons[i].addEventListener("click", buttonPress)
 };
 
+document.addEventListener("keyup", keyboardInput)
+
+
+document.onkeyup = function(e){
+    if (e.key === "*"){
+        buttons[13].click();
+    } else if (e.key === "/"){
+        buttons[17].click();
+    } else if (e.key === "Backspace"){
+        buttons[1].click();
+    } else if (e.key === "a"){
+        buttons[0].click();
+    } else if (e.key === "1"){
+        buttons[2].click();
+    } else if (e.key === "2"){
+        buttons[3].click();
+    } else if (e.key === "3"){
+        buttons[4].click();
+    } else if (e.key === "4"){
+        buttons[6].click();
+    } else if (e.key === "5"){
+        buttons[7].click();
+    } else if (e.key === "6"){
+        buttons[8].click();
+    } else if (e.key === "7"){
+        buttons[10].click();
+    } else if (e.key === "8"){
+        buttons[11].click();
+    } else if (e.key === "9"){
+        buttons[12].click();
+    } else if (e.key === "0"){
+        buttons[14].click();
+    } else if (e.key === "."){
+        buttons[15].click();
+    } else if (e.key === "Enter"){
+        buttons[16].click();
+    } else if (e.key === "+"){
+        buttons[5].click();
+    } else if (e.key === "-"){
+        buttons[9].click();
+    }
+};
